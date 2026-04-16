@@ -1,0 +1,25 @@
+﻿Сборка начата 05.11.2025 22:38:00.
+Уровень детализации журнала: Normal.     1>Проект "D:\5 СЕМ\ОС\user-f3c1004\Lab-03x\Lab-03x\Lab-03x.vcxproj" в узле 2 (целевые объекты Build).
+     1>PrepareForBuild:
+         Структурированный вывод включен. Форматирование диагностики компилятора будет отражать иерархию ошибок. Подробнее см. https://aka.ms/cpp/structured-output.
+         Создание каталога "D:\5 СЕМ\ОС\user-f3c1004\Lab-03x\x64\Debug\".
+         Создание каталога "x64\Debug\Lab-03x.tlog\".
+       InitializeBuildStatus:
+         Создание "x64\Debug\Lab-03x.tlog\unsuccessfulbuild", так как было задано "AlwaysCreate".
+         Обращение к "x64\Debug\Lab-03x.tlog\unsuccessfulbuild".
+       ClCompile:
+         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\CL.exe /c /ZI /JMC /nologo /W3 /WX- /diagnostics:column /sdl /Od /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /permissive- /Fo"x64\Debug\\" /Fd"x64\Debug\vc143.pdb" /external:W3 /Gd /TP /FC /errorReport:prompt "Lab-03x.cpp"
+         Lab-03x.cpp
+     1>D:\5 СЕМ\ОС\user-f3c1004\Lab-03x\Lab-03x\Lab-03x.cpp(3,10): error C1083: Не удается открыть файл включение: unistd.h: No such file or directory,
+     1>Сборка проекта "D:\5 СЕМ\ОС\user-f3c1004\Lab-03x\Lab-03x\Lab-03x.vcxproj" завершена (целевые объекты Build) с ошибкой.
+
+Ошибка сборки.
+
+       "D:\5 СЕМ\ОС\user-f3c1004\Lab-03x\Lab-03x\Lab-03x.vcxproj" (целевой объект Build ) (1) ->
+       (Целевой объект ClCompile) -> 
+         D:\5 СЕМ\ОС\user-f3c1004\Lab-03x\Lab-03x\Lab-03x.cpp(3,10): error C1083: Не удается открыть файл включение: unistd.h: No such file or directory,
+
+    Предупреждений: 0
+    Ошибок: 1
+
+Прошло времени 00:00:00.87

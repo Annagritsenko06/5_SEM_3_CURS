@@ -1,0 +1,11 @@
+{
+  "name": "gritsenkomodulelab6",
+  "version": "1.0.0",
+  "description": "module for lab6",
+  "main": "gritsenkomoduleLab6.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Anna Gritsenko",
+  "license": "ISC"
+}

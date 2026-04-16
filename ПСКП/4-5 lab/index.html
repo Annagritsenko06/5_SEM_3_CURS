@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+  <style>
+     
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        .main {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 30px;
+        }
+
+        .container {
+            flex: 1 1 320px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 6px;
+            font-weight: 500;
+            font-size: 14px;
+            color: #444;
+        }
+
+        input[type="number"],
+        input[type="text"],
+        input[type="date"] {
+            padding: 10px 12px;
+            font-size: 15px;
+            border: 1.5px solid #ccc;
+            border-radius: 6px;
+            transition: border-color 0.3s ease;
+        }
+        input[type="number"]:focus,
+        input[type="text"]:focus,
+        input[type="date"]:focus {
+            outline: none;
+            border-color: #ffda2a;
+            box-shadow: 0 0 6px #ffe44a88;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        button {
+            background-color:lightblue;
+            border: none;
+            border-radius: 6px;
+            color: #333;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 10px 18px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            flex: 1 1 100px;
+        }
+
+        button:hover {
+            background-color:cornflowerblue;
+        }
+
+        .result {
+            flex: 1 1 320px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            justify-content: center;
+  }
+
+        #get_result {
+            min-height: 140px;
+            max-height: 160px;
+            overflow-y: auto;
+            background: #fafafa;
+            border: 1.5px solid #ddd;
+            padding: 12px 15px;
+            border-radius: 6px;
+            font-size: 14px;
+            color: #222;
+        }
+
+        #message {
+            text-align: center;
+            font-weight: 600;
+            color: #2e7d32; 
+            font-size: 16px;
+        }
+
+        #error {
+            text-align: center;
+            color: #d32f2f;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 700px) {
+            .main {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="input-group">
+                <label for="id">ID</label>
+                <input type="number" id="id" placeholder="Введите ID" min="0" />
+            </div>
+            <div class="input-group">
+                <label for="fio">Name</label>
+                <input type="text" id="fio" placeholder="Введите имя" />
+            </div>
+            <div class="input-group">
+                <label for="bdate">Bdate</label>
+                <input type="date" id="bdate" />
+            </div>
+            <div class="buttons">
+                <button onclick="Post()">Insert</button>
+                <button onclick="Update()">Update</button>
+                <button onclick="Delete()">Delete</button>
+            </div>
+        </div>
+
+        <div class="result">
+            <div id="error"></div>
+            <div id="message"></div>
+            <div id="get_result"></div>
+            <div class="buttons">
+                <button onclick="GET()">Get</button>
+            </div>
+        </div>
+    </div>
+<script>
+    async function Post() {
+        const name = document.getElementById('fio').value;
+        const bday = document.getElementById('bdate').value;
+
+        const response = await fetch('http://localhost:5000/api/db', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ name, bday })
+        });
+
+        const result = await response.json();
+        console.log(result);
+        displayResult(result);
+    }
+
+    async function Update() {
+
+        const id = document.getElementById('id').value;
+        const name = document.getElementById('fio').value;
+        const bday = document.getElementById('bdate').value;
+
+        const response = await fetch('http://localhost:5000/api/db', {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ id: parseInt(id), name, bday })
+        });
+
+        const result = await response.json();
+        console.log(result);
+
+        displayResult(result);
+    }
+
+    async function Delete() {
+        console.log("Delete");
+
+        const id = document.getElementById('id').value;
+
+        const response = await fetch('http://localhost:5000/api/db', {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ id: parseInt(id) })
+        });
+
+        const result = await response.json();
+        console.log(result);
+
+        displayResult(result);
+    }
+
+    async function GET() {
+        console.log("get");
+        const response = await fetch('http://localhost:5000/api/db', {
+            method: 'GET'
+        });
+
+        const result = await response.json();
+        console.log(result);
+        displayResult(result);
+    }
+
+    
+    function displayResult(result) {
+        const getResultDiv = document.getElementById('get_result');
+        const messageDiv = document.getElementById('message');
+        const errorDiv = document.getElementById('error');
+        getResultDiv.innerHTML = '';
+        messageDiv.innerHTML = '';
+        errorDiv.innerHTML = '';
+
+        if (result.error) {
+            errorDiv.innerHTML = result.error;
+            messageDiv.innerHTML = "Ошибка";
+        } else {
+            messageDiv.innerHTML = "Успешно";
+            if (Array.isArray(result)) {
+                getResultDiv.innerHTML = "";
+                result.forEach(c=> getResultDiv.innerHTML += `${c.id} ${c.name} ${c.bday}<br/>`)
+            } else {
+                getResultDiv.innerHTML = `${result.id} ${result.name} ${result.bday}`;
+            }
+        }
+    }
+</script>
+</body>

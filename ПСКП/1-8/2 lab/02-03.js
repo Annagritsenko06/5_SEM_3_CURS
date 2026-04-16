@@ -1,0 +1,17 @@
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+    if(req.url === '/api/name' && req.method === 'GET'){
+
+        res.writeHead(200,{'Content-Type': 'text/plain; charset=utf-8'});
+        res.end('Anna Gritsenko');       
+    }
+    else
+    { 
+        res.writeHead(404,{'Content-Type': 'text/plain; charset=utf-8'});   
+        res.end('not found');
+    }
+
+}).listen(5000);
+
+    console.log(`Server running at http://localhost:5000/api/name`);

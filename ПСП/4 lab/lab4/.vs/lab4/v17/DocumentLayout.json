@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\5\u0421\u0415\u041C\\\u041F\u0421\u041F\\4 lab\\lab4\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E8614DA6-28ED-446C-BB8E-97467A2031BC}|lab4\\lab4.vcxproj|D:\\5\u0421\u0415\u041C\\\u041F\u0421\u041F\\4 lab\\lab4\\lab4\\ClientB.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E8614DA6-28ED-446C-BB8E-97467A2031BC}|lab4\\lab4.vcxproj|solutionrelative:lab4\\ClientB.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68931F01-AB9B-4E9C-A389-F73521C8C481}|ServerB\\ServerB.vcxproj|D:\\5\u0421\u0415\u041C\\\u041F\u0421\u041F\\4 lab\\lab4\\ServerB\\ServerB.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{68931F01-AB9B-4E9C-A389-F73521C8C481}|ServerB\\ServerB.vcxproj|solutionrelative:ServerB\\ServerB.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ClientB.cpp",
+              "DocumentMoniker": "D:\\5\u0421\u0415\u041C\\\u041F\u0421\u041F\\4 lab\\lab4\\lab4\\ClientB.cpp",
+              "RelativeDocumentMoniker": "lab4\\ClientB.cpp",
+              "ToolTip": "D:\\5\u0421\u0415\u041C\\\u041F\u0421\u041F\\4 lab\\lab4\\lab4\\ClientB.cpp",
+              "RelativeToolTip": "lab4\\ClientB.cpp",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAADcAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-10-23T19:48:42.752Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ServerB.cpp",
+              "DocumentMoniker": "D:\\5\u0421\u0415\u041C\\\u041F\u0421\u041F\\4 lab\\lab4\\ServerB\\ServerB.cpp",
+              "RelativeDocumentMoniker": "ServerB\\ServerB.cpp",
+              "ToolTip": "D:\\5\u0421\u0415\u041C\\\u041F\u0421\u041F\\4 lab\\lab4\\ServerB\\ServerB.cpp",
+              "RelativeToolTip": "ServerB\\ServerB.cpp",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAADYAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-10-23T19:50:10.767Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

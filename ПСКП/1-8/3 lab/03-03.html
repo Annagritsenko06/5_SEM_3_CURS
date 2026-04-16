@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+<h1>task 03-03</h1>
+<div id='result'></div>
+<script>
+    const fetchPromises = [];
+    result.innerHTML = '';
+    let n = 1;
+    const d = Date.now();
+    for(let k = 1; k <= 20; k++) {
+    const fetchPromise = fetch(`http://localhost:5000/fact?k=${k}`, {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
+    })
+    .then(response => response.json())
+    .then(pdata => {
+      result.innerHTML += (n++) + '. Result: ' + (Date.now() - d) + 'ms - ' + pdata.k + '/' + pdata.fact + '<br/>';
+      return pdata;
+    });
+    fetchPromises.push(fetchPromise);
+  }
+
+  Promise.all(fetchPromises).then(() => {
+    const totalDuration = Date.now() - d;
+    result.innerHTML += '<br/>Total time if all requestes: ' + totalDuration + 'ms';
+  });
+</script>
+</body>
+</html>

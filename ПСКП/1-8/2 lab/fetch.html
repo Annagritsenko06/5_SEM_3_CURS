@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fetch Example</title>
+</head>
+<body>
+  <h1>Данные пользователя</h1>
+  <div id="person"></div>
+  <script>
+    fetch('/api/name')
+      .then(response => response.json())
+      .then(data => {
+        const personDiv = document.getElementById('person');
+        personDiv.textContent = `${data.surname} ${data.name} ${data.patronymic}`;
+      })
+      .catch(error => {
+        console.error('Ошибка при получении данных:', error);
+      });
+  </script>
+</body>
+</html>

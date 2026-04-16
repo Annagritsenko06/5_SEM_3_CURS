@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="tag"></p>
+<script>
+    let xhr = new XMLHttpRequest();
+    let URL = 'http://localhost:5000/api/name';
+    let el = document.getElementById('tag');
+    
+    xhr.onreadystatechange = function() {
+        switch(xhr.readyState) {
+            case 0:
+                el.innerHTML += 'UNSENT: объект создан, open() не вызван<br>';
+                break;
+            case 1:
+                el.innerHTML += 'OPENED: вызван метод open()<br>';
+                break;
+            case 2:
+                el.innerHTML += 'HEADERS_RECEIVED: получены заголовки<br>';
+                break;
+            case 3:
+                el.innerHTML += 'LOADING: загрузка данных...<br>';
+                break;
+            case 4:
+                el.innerHTML += 'DONE: запрос завершён, статус: ' + xhr.status + '<br>';
+                if (xhr.status === 200) {
+                    el.innerHTML += 'Ответ: ' + xhr.responseText + '<br>';
+                } else {
+                    el.innerHTML += 'Ошибка запроса<br>';
+                }
+                break;
+        }
+    };
+    xhr.open('GET', URL, true);//onchangeState5 state
+    xhr.send();
+
+</script>
+</body>
+</html>

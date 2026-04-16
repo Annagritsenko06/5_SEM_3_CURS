@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "Новый профиль",
+    "Projects": [
+      {
+        "Path": "ServerB\\ServerB.vcxproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "lab4\\lab4.vcxproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
